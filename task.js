@@ -60,13 +60,46 @@
 //     ;
 // }
 // start(multiply);
-let cars = [
-  {Ferrari: 340},
-  {Lamborghini: 325},
-  {Tesla: 250},
-  {BMW: 305},
-  {Toyota: 180}
+// function person(name,age){
+//   this.name = name,
+//   this.age = age
+// }
+
+// // const per = new person("moti",22);
+// function printer(obj){
+//   console.log(`name: ${obj.name}, age: ${obj.age}`);
+  
+// }
+// printer(new person("moti",22))
+
+// function Animal(name){
+//   name;
+//   sound = "basic";
+//   this.greet = function (){
+//         console.log(`my name is: ${this.name} my sound is: ${this.sound}`)
+// }}
+// const dog = new Animal("dog")
+// const cat = new Animal("cat")
+// cat.greet()
+
+const users = [
+    {
+        username: "Moshe"
+    },
+    {
+        username: "Bob"
+    },
+    {
+        username: "Ben"
+    }
 ];
-let a = cars.map(
-    
-)
+function processUserData(input, index) {
+    try {
+        const users = JSON.parse(input);
+        console.log(users[index].username.toUpperCase());
+    } catch (err) {
+        console.error({ err });
+    }
+}
+const usersString = JSON.stringify(users);
+processUserData(usersString, 1);
