@@ -33,7 +33,7 @@ function deleteUser(){}
 
 function updateUser(){}
 
-
+const a = JSON.stringify([1,2,3,4,5])
 
 // const a = JSON.stringify([1,2,3,4,5])
 // const b = JSON.parse(a)
