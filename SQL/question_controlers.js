@@ -21,6 +21,17 @@ export async function getEmployeesReportingToManager1143( req , res ){
     }
 }
 
+export async function getEmployeesReportingToManager( req , res ){
+    try {
+        const id = req.params.id
+        const [rows] = await pool.query("SELECT `firstName`,`lastName` FROM employees where `reportsTo` = ?;", id);
+        res.json(rows)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+}
+
 export async function getClassicCarsProductCount( req , res ){
     try {
         const [rows] = await pool.query("SELECT COUNT(*) as 'Classic Cars in products' FROM `products` WHERE `productLine` ='Classic Cars';");
