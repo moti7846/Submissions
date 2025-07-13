@@ -1,6 +1,6 @@
 import { URL } from "url";
 
-const myUrl = new URL('http://localhost:3000/users/list?role=admin&active=true#top');
+const myUrl = new URL('http://localhost:3002/users/list?role=admin&active=true#top');
 
 
 console.log(`Hostname: ${myUrl.hostname}`);  
