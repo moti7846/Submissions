@@ -10,6 +10,16 @@ export async function getCustomersFromFranceCount( req , res ){
         res.status(500).json({ error: "Internal Server Error" });
     }
 }
+export async function getCustomersFrom( req , res ){
+    try {
+        const country = req.params.country
+        const [rows] = await pool.query("SELECT count(*) as 'customers in France' FROM customers WHERE country = ?;" , country);
+        res.json(rows)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+}
 
 export async function getEmployeesReportingToManager1143( req , res ){
     try {
